@@ -701,3 +701,144 @@ button.ghost.icon {
   width: 40px;
   padding: 0;
 }
+/* ===== Login / Auth ===== */
+.login-page {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+.login-card {
+  width: 100%;
+  padding: 24px 18px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  display: grid;
+  gap: 18px;
+}
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.login-brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.login-brand h1 span {
+  color: var(--brand);
+}
+.login-brand p {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.login-lead {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.45;
+  text-align: center;
+}
+.login-tabs {
+  margin: 0;
+}
+.login-erro {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #ffc9c9;
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+}
+.login-ok {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--brand);
+  background: rgba(26, 224, 143, 0.12);
+  border: 1px solid rgba(26, 224, 143, 0.25);
+}
+.btn-sair {
+  margin-left: auto;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-sair:active {
+  opacity: 0.85;
+}
+.banner-warn {
+  margin: 0 16px 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  color: var(--gold);
+  background: rgba(233, 201, 122, 0.1);
+  border: 1px solid rgba(233, 201, 122, 0.25);
+}
+/* ===== Página pública /p/:id ===== */
+.public-pix .public-resumo {
+  text-align: center;
+  display: grid;
+  gap: 4px;
+}
+.public-pix .public-resumo strong {
+  font-size: 16px;
+}
+.public-valor {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--brand);
+}
+.public-qr {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+.public-qr img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.public-codigo {
+  font-size: 13px;
+  color: var(--muted);
+}
+.public-codigo summary {
+  cursor: pointer;
+  user-select: none;
+}
+.public-payload {
+  margin: 10px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  line-height: 1.4;
+  word-break: break-all;
+  color: var(--text);
+  max-height: 120px;
+  overflow: auto;
+}

@@ -1,15 +1,11 @@
-function limpa(s) {
-  return (s || "")
+const f = (id, v) => id + String(v.length).padStart(2, "0") + v;
+
+const limpa = (s) =>
+  (s || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-zA-Z0-9 @.\-]/g, "")
+    .toUpperCase()
     .trim();
-}
-
-function f(id, value) {
-  const v = String(value);
-  return id + String(v.length).padStart(2, "0") + v;
-}
 
 function crc16(s) {
   let crc = 0xffff;
@@ -21,6 +17,7 @@ function crc16(s) {
   return crc.toString(16).toUpperCase().padStart(4, "0");
 }
 
+/** Normaliza a chave: CPF/CNPJ só números, telefone com +55, e-mail e aleatória como estão */
 export function normalizaChave(chave) {
   const c = chave.trim();
   if (c.includes("@")) return c.toLowerCase();
@@ -62,12 +59,22 @@ export const hojeISO = () => {
 
 export const dataBr = (iso) => (iso ? iso.split("-").reverse().join("/") : "");
 
+/** Link da página pública com QR + botão copiar */
+export function linkPagamento(id) {
+  const base = window.location.origin;
+  return `${base}/p/${encodeURIComponent(id)}`;
+}
+
+/** Mensagem do WhatsApp (com link de pagamento quando houver id) */
 export function mensagemCobranca(c) {
+  const link = c.id ? linkPagamento(c.id) : "";
   return (
     `Olá${c.cliente ? ", " + c.cliente : ""}! Segue a cobrança` +
     `${c.servico ? " de " + c.servico : ""}: *${brl(c.valor)}*` +
     `${c.vence ? "\nVencimento: " + dataBr(c.vence) : ""}` +
-    `\n\nPix copia e cola:\n${c.payload}`
+    (link
+      ? `\n\nPague com 1 toque (QR + copiar Pix):\n${link}`
+      : `\n\nPix copia e cola:\n${c.payload}`)
   );
 }
 
