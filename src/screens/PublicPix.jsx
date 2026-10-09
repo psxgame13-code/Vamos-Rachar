@@ -62,7 +62,7 @@ export default function PublicPix({ id }) {
           </div>
           <div>
             <h1>
-              Cobra <span>Fácil</span>
+              SEV<span>MEI</span>
             </h1>
             <p>Pagamento via Pix</p>
           </div>

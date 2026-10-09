@@ -42,9 +42,9 @@ export default function Login() {
           </div>
           <div>
             <h1>
-              Cobra <span>Fácil</span>
+              SEV<span>MEI</span>
             </h1>
-            <p>Pix na hora. Sem complicação.</p>
+            <p>Pix na hora para MEI e autônomos.</p>
           </div>
         </div>
 
